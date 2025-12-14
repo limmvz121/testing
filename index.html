@@ -4,14 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twins-VourTR | Panel Pterodactyl Premium</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- External Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3067/3067256.png">
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Panel Pterodactyl Premium untuk server game Anda. Solusi lengkap manajemen server dengan performa tinggi dan keamanan maksimal.">
+    <meta name="keywords" content="pterodactyl panel, server game, minecraft panel, game server hosting, web hosting">
+    <meta name="author" content="Twins-VourTR">
+    
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="Twins-VourTR | Panel Pterodactyl Premium">
+    <meta property="og:description" content="Panel Pterodactyl Premium untuk server game Anda">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://limmvz121.github.io/testing/">
+    
+    <style>
+        /* Quick fixes for GitHub Pages */
+        .github-fix {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Header akan di-load via JavaScript -->
     <div id="header"></div>
+
+    <!-- Loading Spinner -->
+    <div id="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 9999; display: flex; justify-content: center; align-items: center;">
+        <div class="spinner">
+            <i class="fas fa-dragon fa-spin fa-3x" style="color: #4361ee;"></i>
+            <p style="margin-top: 20px; color: #4361ee;">Loading Twins-VourTR...</p>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -45,7 +78,7 @@
                         <a href="products.html" class="btn btn-primary">
                             <i class="fas fa-shopping-cart"></i> Lihat Paket
                         </a>
-                        <a href="#features" class="btn btn-secondary">
+                        <a href="#demo" class="btn btn-secondary" id="demoBtn">
                             <i class="fas fa-play-circle"></i> Demo Live
                         </a>
                     </div>
@@ -64,6 +97,14 @@
                             <div class="stat">
                                 <i class="fas fa-hdd"></i>
                                 <span>Storage: 120GB</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-microchip"></i>
+                                <span>CPU: 25%</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-network-wired"></i>
+                                <span>Network: 1Gbps</span>
                             </div>
                         </div>
                     </div>
@@ -117,7 +158,7 @@
     </section>
 
     <!-- Popular Products -->
-    <section class="popular-products">
+    <section class="popular-products" id="products">
         <div class="container">
             <div class="section-header">
                 <h2>Paket <span class="gradient-text">Populer</span></h2>
@@ -149,7 +190,9 @@
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-header">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                                <div class="avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
                                 <div>
                                     <h4>Alex Wijaya</h4>
                                     <span>Owner Minecraft Server</span>
@@ -169,7 +212,9 @@
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-header">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                                <div class="avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
                                 <div>
                                     <h4>Sarah Putri</h4>
                                     <span>Game Developer</span>
@@ -185,8 +230,61 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div>
+                                    <h4>Rizky Pratama</h4>
+                                    <span>Discord Bot Hosting</span>
+                                </div>
+                            </div>
+                            <p>"Harga kompetitif dengan fitur yang lengkap. Tidak pernah down sejak pakai 6 bulan lalu."</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>Coba <span class="gradient-text">Demo Live</span></h2>
+                <p>Lihat dashboard kami secara langsung sebelum membeli</p>
+            </div>
+            
+            <div class="demo-container">
+                <div class="demo-login">
+                    <h3><i class="fas fa-sign-in-alt"></i> Login Demo</h3>
+                    <p>Gunakan akun berikut untuk mencoba:</p>
+                    <div class="demo-credentials">
+                        <div class="credential">
+                            <strong>Username:</strong> <code>demo@twins-vourtr.com</code>
+                        </div>
+                        <div class="credential">
+                            <strong>Password:</strong> <code>Demo1234</code>
+                        </div>
+                    </div>
+                    <a href="dashboard.html" class="btn btn-primary btn-block">
+                        <i class="fas fa-external-link-alt"></i> Buka Dashboard Demo
+                    </a>
+                    <p class="demo-note">
+                        <i class="fas fa-info-circle"></i> Data akan direset setiap 24 jam
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -201,7 +299,7 @@
                     <a href="products.html" class="btn btn-primary">
                         <i class="fas fa-gem"></i> Pilih Paket Premium
                     </a>
-                    <a href="#" class="btn btn-secondary">
+                    <a href="#demo" class="btn btn-secondary">
                         <i class="fas fa-play"></i> Coba Demo Gratis
                     </a>
                 </div>
@@ -227,77 +325,189 @@
                     <span>Total:</span>
                     <span id="cartTotal">Rp 0</span>
                 </div>
-                <a href="checkout.html" class="btn btn-primary btn-block">Checkout</a>
+                <div class="cart-actions">
+                    <button class="btn btn-outline" id="continueShopping">Lanjut Belanja</button>
+                    <a href="checkout.html" class="btn btn-primary">Checkout</a>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- Notification Toast -->
+    <div id="notificationToast" class="notification-toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">Item berhasil ditambahkan ke keranjang!</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
+    
     <script>
+        // Hide loading spinner when page is loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading').style.display = 'none';
+            }, 1000);
+        });
+        
         // Load components
         document.addEventListener('DOMContentLoaded', function() {
             // Load header and footer
-            fetch('components/header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header').innerHTML = data;
-                    initNavigation();
-                });
+            Promise.all([
+                fetch('components/header.html').then(res => res.text()),
+                fetch('components/footer.html').then(res => res.text())
+            ]).then(([headerData, footerData]) => {
+                document.getElementById('header').innerHTML = headerData;
+                document.getElementById('footer').innerHTML = footerData;
                 
-            fetch('components/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer').innerHTML = data;
-                });
+                // Initialize navigation after header is loaded
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+                
+                // Initialize cart
+                if (typeof updateCartCount === 'function') {
+                    updateCartCount();
+                }
+                
+                // Add cart icon event listener
+                const cartIcon = document.querySelector('.cart-icon');
+                if (cartIcon) {
+                    cartIcon.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        document.getElementById('cartModal').classList.add('active');
+                        if (typeof loadCartItems === 'function') {
+                            loadCartItems();
+                        }
+                    });
+                }
+            }).catch(error => {
+                console.error('Error loading components:', error);
+                // Fallback header if fetch fails
+                document.getElementById('header').innerHTML = `
+                    <header>
+                        <div class="container">
+                            <div class="nav-container">
+                                <div class="logo">
+                                    <i class="fas fa-dragon logo-icon"></i>
+                                    <h1>Twins-<span>VourTR</span></h1>
+                                </div>
+                                <div class="nav-actions">
+                                    <a href="products.html" class="btn btn-primary">
+                                        <i class="fas fa-shopping-cart"></i> Beli Sekarang
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                `;
+            });
             
             // Load popular products
             loadPopularProducts();
             
             // Initialize testimonials slider
-            const swiper = new Swiper('.testimonials-slider', {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 2,
+            if (typeof Swiper !== 'undefined') {
+                const swiper = new Swiper('.testimonials-slider', {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
                     },
-                    1024: {
-                        slidesPerView: 3,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: false,
+                    },
+                    breakpoints: {
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                        }
                     }
+                });
+            }
+            
+            // Demo button functionality
+            const demoBtn = document.getElementById('demoBtn');
+            if (demoBtn) {
+                demoBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('demo').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Cart modal functionality
+            const closeCart = document.querySelector('.close-cart');
+            const continueShopping = document.getElementById('continueShopping');
+            const cartModal = document.getElementById('cartModal');
+            
+            if (closeCart) {
+                closeCart.addEventListener('click', function() {
+                    cartModal.classList.remove('active');
+                });
+            }
+            
+            if (continueShopping) {
+                continueShopping.addEventListener('click', function() {
+                    cartModal.classList.remove('active');
+                });
+            }
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === cartModal) {
+                    cartModal.classList.remove('active');
                 }
             });
         });
         
+        // Popular products data and loader
+        const popularProducts = [
+            {
+                id: 2,
+                name: "Panel Pterodactyl Pro",
+                price: 399000,
+                originalPrice: 499000,
+                features: ["8GB RAM", "100GB NVMe SSD", "Unlimited Players", "Auto Backup", "Priority Support"],
+                icon: "fas fa-rocket",
+                badge: "TERLARIS",
+                description: "Paket terlaris untuk server menengah"
+            },
+            {
+                id: 3,
+                name: "Panel Pterodactyl Business",
+                price: 699000,
+                originalPrice: 899000,
+                features: ["16GB RAM", "250GB NVMe", "DDoS Protection", "White Label", "24/7 Support"],
+                icon: "fas fa-crown",
+                badge: "PREMIUM",
+                description: "Solusi enterprise untuk bisnis besar"
+            },
+            {
+                id: 4,
+                name: "Panel Pterodactyl Gaming",
+                price: 349000,
+                originalPrice: 449000,
+                features: ["6GB RAM", "80GB SSD", "Optimized for Games", "Game-specific Tools", "Discord Integration"],
+                icon: "fas fa-gamepad",
+                badge: "GAMING",
+                description: "Optimasi khusus untuk server game"
+            }
+        ];
+        
         function loadPopularProducts() {
-            const products = [
-                {
-                    id: 2,
-                    name: "Panel Pterodactyl Pro",
-                    price: 399000,
-                    originalPrice: 499000,
-                    features: ["8GB RAM", "100GB SSD", "Unlimited Players", "Auto Backup", "Priority Support"],
-                    icon: "fas fa-rocket",
-                    badge: "TERLARIS"
-                },
-                {
-                    id: 3,
-                    name: "Panel Pterodactyl Business",
-                    price: 699000,
-                    originalPrice: 899000,
-                    features: ["16GB RAM", "250GB NVMe", "DDoS Protection", "White Label", "24/7 Support"],
-                    icon: "fas fa-crown",
-                    badge: "PREMIUM"
-                }
-            ];
-            
             const container = document.getElementById('popularProducts');
-            container.innerHTML = products.map(product => `
+            if (!container) return;
+            
+            container.innerHTML = popularProducts.map(product => `
                 <div class="product-card">
                     ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
                     <div class="product-header">
@@ -305,12 +515,14 @@
                     </div>
                     <div class="product-body">
                         <h3>${product.name}</h3>
+                        <p class="product-desc">${product.description}</p>
                         <ul class="product-features">
                             ${product.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
                         </ul>
                         <div class="product-price">
-                            <span class="current">Rp ${product.price.toLocaleString()}</span>
-                            <span class="original">Rp ${product.originalPrice.toLocaleString()}</span>
+                            <span class="current">Rp ${product.price.toLocaleString('id-ID')}</span>
+                            ${product.originalPrice > product.price ? 
+                                `<span class="original">Rp ${product.originalPrice.toLocaleString('id-ID')}</span>` : ''}
                         </div>
                     </div>
                     <div class="product-footer">
@@ -323,7 +535,160 @@
                     </div>
                 </div>
             `).join('');
+            
+            // Add event listeners to cart buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    const product = popularProducts.find(p => p.id === productId);
+                    
+                    if (product && typeof addToCart === 'function') {
+                        addToCart(productId);
+                        showNotification(`${product.name} berhasil ditambahkan ke keranjang!`);
+                    }
+                });
+            });
         }
+        
+        // Notification function
+        function showNotification(message) {
+            const toast = document.getElementById('notificationToast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            if (toast && toastMessage) {
+                toastMessage.textContent = message;
+                toast.classList.add('show');
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            }
+        }
+        
+        // Smooth scroll for anchor links
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('a[href^="#"]')) {
+                e.preventDefault();
+                const targetId = e.target.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
     </script>
+    
+    <style>
+        /* Additional styles for GitHub Pages compatibility */
+        .notification-toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .notification-toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .demo-section {
+            padding: 4rem 0;
+            background: #f8fafc;
+        }
+        
+        .demo-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .demo-login {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .demo-credentials {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        
+        .credential {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .credential code {
+            background: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        .demo-note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-features {
+                justify-content: center;
+            }
+            
+            .notification-toast {
+                left: 20px;
+                right: 20px;
+            }
+        }
+    </style>
 </body>
 </html>
