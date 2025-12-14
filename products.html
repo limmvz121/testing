@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Panel - Twins-VourTR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="products-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Paket Panel <span class="gradient-text">Pterodactyl</span></h1>
+                <p>Pilih paket yang sesuai dengan kebutuhan server Anda</p>
+            </div>
+            
+            <div class="products-filter">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="basic">Basic</button>
+                <button class="filter-btn" data-filter="pro">Pro</button>
+                <button class="filter-btn" data-filter="enterprise">Enterprise</button>
+                <button class="filter-btn" data-filter="gaming">Gaming</button>
+            </div>
+            
+            <div class="products-container" id="productsContainer">
+                <!-- Products loaded via JavaScript -->
+            </div>
+            
+            <div class="comparison-table">
+                <h2>Perbandingan <span class="gradient-text">Paket</span></h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fitur</th>
+                            <th>Basic</th>
+                            <th>Pro</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RAM</td>
+                            <td>4GB</td>
+                            <td>8GB</td>
+                            <td>16GB+</td>
+                        </tr>
+                        <tr>
+                            <td>Storage</td>
+                            <td>50GB SSD</td>
+                            <td>100GB NVMe</td>
+                            <td>250GB NVMe</td>
+                        </tr>
+                        <tr>
+                            <td>CPU Cores</td>
+                            <td>2 Cores</td>
+                            <td>4 Cores</td>
+                            <td>8 Cores</td>
+                        </tr>
+                        <tr>
+                            <td>Backup</td>
+                            <td>Mingguan</td>
+                            <td>Harian</td>
+                            <td>Real-time</td>
+                        </tr>
+                        <tr>
+                            <td>Support</td>
+                            <td>Email</td>
+                            <td>Priority</td>
+                            <td>24/7 Dedicated</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <div class="cart-modal" id="cartModal"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load components
+            fetch('components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                    initNavigation();
+                });
+                
+            fetch('components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+            
+            // Load products
+            loadAllProducts();
+            initFilter();
+        });
+        
+        const allProducts = [
+            {
+                id: 1,
+                name: "Panel Basic",
+                category: "basic",
+                price: 199000,
+                originalPrice: 249000,
+                features: ["4GB RAM", "50GB SSD", "100 Players", "Weekly Backup", "Email Support"],
+                icon: "fas fa-server",
+                description: "Cocok untuk server kecil atau testing"
+            },
+            {
+                id: 2,
+                name: "Panel Pro",
+                category: "pro",
+                price: 399000,
+                originalPrice: 499000,
+                features: ["8GB RAM", "100GB NVMe", "Unlimited Players", "Daily Backup", "Priority Support"],
+                icon: "fas fa-rocket",
+                description: "Paket terlaris untuk server menengah",
+                badge: "TERLARIS"
+            },
+            {
+                id: 3,
+                name: "Panel Enterprise",
+                category: "enterprise",
+                price: 899000,
+                originalPrice: 1099000,
+                features: ["16GB RAM", "250GB NVMe", "DDoS Protection", "Real-time Backup", "24/7 Support"],
+                icon: "fas fa-crown",
+                description: "Solusi enterprise untuk bisnis besar",
+                badge: "PREMIUM"
+            },
+            {
+                id: 4,
+                name: "Panel Gaming",
+                category: "gaming",
+                price: 349000,
+                originalPrice: 449000,
+                features: ["6GB RAM", "80GB SSD", "Optimized for Games", "Game-specific Tools", "Discord Integration"],
+                icon: "fas fa-gamepad",
+                description: "Optimasi khusus untuk server game"
+            },
+            {
+                id: 5,
+                name: "Panel Cloud",
+                category: "pro",
+                price: 599000,
+                originalPrice: 749000,
+                features: ["Auto Scaling", "Load Balancer", "99.99% Uptime", "Global CDN", "API Access"],
+                icon: "fas fa-cloud",
+                description: "Panel berbasis cloud dengan skalabilitas tinggi"
+            },
+            {
+                id: 6,
+                name: "Panel Ultimate",
+                category: "enterprise",
+                price: 1299000,
+                originalPrice: 1499000,
+                features: ["32GB RAM", "500GB NVMe", "White Label", "Custom Features", "Dedicated Manager"],
+                icon: "fas fa-gem",
+                description: "Paket ultimate dengan semua fitur premium"
+            }
+        ];
+        
+        function loadAllProducts(filter = 'all') {
+            const container = document.getElementById('productsContainer');
+            const filteredProducts = filter === 'all' 
+                ? allProducts 
+                : allProducts.filter(p => p.category === filter);
+            
+            container.innerHTML = filteredProducts.map(product => `
+                <div class="product-card" id="product-${product.id}">
+                    ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                    <div class="product-header">
+                        <i class="${product.icon}"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>${product.name}</h3>
+                        <p class="product-desc">${product.description}</p>
+                        <ul class="product-features">
+                            ${product.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                        </ul>
+                        <div class="product-price">
+                            <span class="current">Rp ${product.price.toLocaleString()}/bulan</span>
+                            <span class="original">Rp ${product.originalPrice.toLocaleString()}</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <button class="btn btn-outline add-to-cart" data-id="${product.id}">
+                            <i class="fas fa-cart-plus"></i> Tambah
+                        </button>
+                        <button class="btn btn-primary buy-now" data-id="${product.id}">
+                            <i class="fas fa-bolt"></i> Beli Sekarang
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Add event listeners
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    addToCart(productId);
+                });
+            });
+            
+            document.querySelectorAll('.buy-now').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    buyNow(productId);
+                });
+            });
+        }
+        
+        function initFilter() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    loadAllProducts(this.dataset.filter);
+                });
+            });
+        }
+        
+        function buyNow(productId) {
+            const product = allProducts.find(p => p.id === productId);
+            addToCart(productId);
+            // Redirect to checkout
+            window.location.href = 'checkout.html';
+        }
+    </script>
+</body>
+</html>

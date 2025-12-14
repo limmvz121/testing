@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Twins-VourTR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <div class="logo">
+                <i class="fas fa-dragon"></i>
+                <h1>Twins-<span>VourTR</span></h1>
+            </div>
+            <div class="checkout-steps">
+                <div class="step active">
+                    <span class="step-number">1</span>
+                    <span class="step-text">Keranjang</span>
+                </div>
+                <div class="step active">
+                    <span class="step-number">2</span>
+                    <span class="step-text">Checkout</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <span class="step-text">Pembayaran</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <span class="step-text">Selesai</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="checkout-content">
+            <div class="checkout-form">
+                <h2><i class="fas fa-shipping-fast"></i> Informasi Pesanan</h2>
+                
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="email" required placeholder="nama@email.com">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName"><i class="fas fa-user"></i> Nama Depan</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Nama Belakang</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Nomor Telepon</label>
+                        <input type="tel" id="phone" required placeholder="0812-3456-7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serverName"><i class="fas fa-server"></i> Nama Server</label>
+                        <input type="text" id="serverName" required placeholder="Contoh: MyAwesomeServer">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="domain"><i class="fas fa-globe"></i> Domain (Opsional)</label>
+                        <input type="text" id="domain" placeholder="serverkamu.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fas fa-cogs"></i> Durasi Langganan</label>
+                        <div class="duration-options">
+                            <label class="duration-option">
+                                <input type="radio" name="duration" value="1" checked>
+                                <span>1 Bulan</span>
+                            </label>
+                            <label class="duration-option discount">
+                                <input type="radio" name="duration" value="3">
+                                <span>3 Bulan <small>Hemat 10%</small></span>
+                            </label>
+                            <label class="duration-option discount">
+                                <input type="radio" name="duration" value="12">
+                                <span>1 Tahun <small>Hemat 25%</small></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <h2><i class="fas fa-credit-card"></i> Metode Pembayaran</h2>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="bankTransfer" value="bank" checked>
+                            <label for="bankTransfer">
+                                <i class="fas fa-university"></i>
+                                <span>Transfer Bank</span>
+                            </label>
+                            <div class="bank-list">
+                                <div class="bank-option">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA">
+                                    <span>BCA - 1234567890</span>
+                                </div>
+                                <div class="bank-option">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Bank_Mandiri_logo.svg" alt="Mandiri">
+                                    <span>Mandiri - 0987654321</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="ewallet" value="ewallet">
+                            <label for="ewallet">
+                                <i class="fas fa-wallet"></i>
+                                <span>E-Wallet</span>
+                            </label>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="crypto" value="crypto">
+                            <label for="crypto">
+                                <i class="fas fa-coins"></i>
+                                <span>Crypto</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes"><i class="fas fa-sticky-note"></i> Catatan (Opsional)</label>
+                        <textarea id="notes" rows="3" placeholder="Catatan tambahan untuk pesanan..."></textarea>
+                    </div>
+                    
+                    <div class="terms-agreement">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">
+                            Saya menyetujui <a href="#">Syarat dan Ketentuan</a> serta <a href="#">Kebijakan Privasi</a>
+                        </label>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <a href="products.html" class="btn btn-outline">
+                            <i class="fas fa-arrow-left"></i> Kembali
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-lock"></i> Lanjut ke Pembayaran
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="order-summary">
+                <h2><i class="fas fa-receipt"></i> Ringkasan Pesanan</h2>
+                
+                <div class="summary-items" id="orderItems">
+                    <!-- Items loaded from cart -->
+                </div>
+                
+                <div class="summary-totals">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">Rp 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Diskon Durasi</span>
+                        <span id="durationDiscount">Rp 0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="totalAmount">Rp 0</span>
+                    </div>
+                </div>
+                
+                <div class="security-notice">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h4>Transaksi Aman</h4>
+                        <p>Data Anda dilindungi dengan enkripsi SSL 256-bit</p>
+                    </div>
+                </div>
+                
+                <div class="support-info">
+                    <h4><i class="fas fa-headset"></i> Butuh Bantuan?</h4>
+                    <p>Hubungi kami di <strong>support@twins-vourtr.com</strong> atau WhatsApp <strong>0812-3456-7890</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/checkout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrderSummary();
+            updateTotals();
+            
+            // Update totals when duration changes
+            document.querySelectorAll('input[name="duration"]').forEach(input => {
+                input.addEventListener('change', updateTotals);
+            });
+            
+            // Handle form submission
+            document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                processCheckout();
+            });
+        });
+        
+        function loadOrderSummary() {
+            const cart = JSON.parse(localStorage.getItem('twinsCart')) || [];
+            const container = document.getElementById('orderItems');
+            
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="empty-cart">Keranjang kosong</p>';
+                return;
+            }
+            
+            container.innerHTML = cart.map(item => `
+                <div class="order-item">
+                    <div class="item-info">
+                        <h4>${item.name}</h4>
+                        <span>1 bulan</span>
+                    </div>
+                    <div class="item-price">Rp ${item.price.toLocaleString()}</div>
+                </div>
+            `).join('');
+        }
+        
+        function updateTotals() {
+            const cart = JSON.parse(localStorage.getItem('twinsCart')) || [];
+            const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+            const duration = document.querySelector('input[name="duration"]:checked').value;
+            
+            let discount = 0;
+            let discountRate = 0;
+            
+            if (duration === '3') {
+                discountRate = 0.10;
+            } else if (duration === '12') {
+                discountRate = 0.25;
+            }
+            
+            discount = subtotal * discountRate;
+            const total = subtotal * duration - discount;
+            
+            document.getElementById('subtotal').textContent = `Rp ${subtotal.toLocaleString()}`;
+            document.getElementById('durationDiscount').textContent = `-Rp ${discount.toLocaleString()}`;
+            document.getElementById('totalAmount').textContent = `Rp ${total.toLocaleString()}`;
+        }
+        
+        function processCheckout() {
+            const formData = {
+                email: document.getElementById('email').value,
+                name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+                phone: document.getElementById('phone').value,
+                serverName: document.getElementById('serverName').value,
+                domain: document.getElementById('domain').value,
+                duration: document.querySelector('input[name="duration"]:checked').value,
+                payment: document.querySelector('input[name="payment"]:checked').value,
+                notes: document.getElementById('notes').value,
+                total: document.getElementById('totalAmount').textContent
+            };
+            
+            // Save order data
+            localStorage.setItem('twinsOrder', JSON.stringify(formData));
+            
+            // Redirect to payment page
+            window.location.href = 'payment.html';
+        }
+    </script>
+</body>
+</html>

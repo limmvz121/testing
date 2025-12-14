@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Twins-VourTR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <h3>Alex Wijaya</h3>
+                        <span class="user-status">Premium User</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-server"></i>
+                            <span>Server Saya</span>
+                            <span class="badge">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Pesanan</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Pembayaran</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-cog"></i>
+                            <span>Pengaturan</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Bantuan</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="#" class="btn-upgrade">
+                    <i class="fas fa-gem"></i>
+                    Upgrade ke Pro
+                </a>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <h1>Dashboard</h1>
+                    <p>Selamat datang di panel kontrol Twins-VourTR</p>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </div>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Tambah Server
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon cpu">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>CPU Usage</h3>
+                        <p class="stat-value">24%</p>
+                        <p class="stat-change">+2% dari kemarin</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon ram">
+                        <i class="fas fa-memory"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>RAM Usage</h3>
+                        <p class="stat-value">4.2/8GB</p>
+                        <p class="stat-change">53% digunakan</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card storage">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Storage</h3>
+                        <p class="stat-value">78/100GB</p>
+                        <p class="stat-change">22% tersedia</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon uptime">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Uptime</h3>
+                        <p class="stat-value">99.9%</p>
+                        <p class="stat-change">30 hari terakhir</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Servers Section -->
+            <section class="servers-section">
+                <div class="section-header">
+                    <h2>Server Aktif</h2>
+                    <a href="#" class="view-all">Lihat Semua</a>
+                </div>
+                
+                <div class="servers-grid">
+                    <div class="server-card">
+                        <div class="server-header">
+                            <h3>Minecraft Server #1</h3>
+                            <span class="server-status online">Online</span>
+                        </div>
+                        <div class="server-info">
+                            <div class="info-item">
+                                <i class="fas fa-users"></i>
+                                <span>15 Players Online</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map"></i>
+                                <span>World: Survival</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-plug"></i>
+                                <span>Version: 1.20.1</span>
+                            </div>
+                        </div>
+                        <div class="server-actions">
+                            <button class="btn btn-small">
+                                <i class="fas fa-play"></i> Start
+                            </button>
+                            <button class="btn btn-small btn-outline">
+                                <i class="fas fa-terminal"></i> Console
+                            </button>
+                            <button class="btn btn-small btn-outline">
+                                <i class="fas fa-cog"></i> Settings
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="server-card">
+                        <div class="server-header">
+                            <h3>Discord Bot Hosting</h3>
+                            <span class="server-status idle">Idle</span>
+                        </div>
+                        <div class="server-info">
+                            <div class="info-item">
+                                <i class="fas fa-robot"></i>
+                                <span>Bot: MusicBot</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-code"></i>
+                                <span>Node.js v18</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-database"></i>
+                                <span>MongoDB Connected</span>
+                            </div>
+                        </div>
+                        <div class="server-actions">
+                            <button class="btn btn-small">
+                                <i class="fas fa-play"></i> Start
+                            </button>
+                            <button class="btn btn-small btn-outline">
+                                <i class="fas fa-terminal"></i> Console
+                            </button>
+                            <button class="btn btn-small btn-outline">
+                                <i class="fas fa-cog"></i> Settings
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Recent Activity -->
+            <section class="activity-section">
+                <div class="section-header">
+                    <h2>Aktivitas Terbaru</h2>
+                </div>
+                
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon success">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Server Minecraft berhasil di-restart</h4>
+                            <p>2 menit yang lalu</p>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon info">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Backup otomatis dibuat</h4>
+                            <p>1 jam yang lalu</p>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>RAM usage mencapai 80%</h4>
+                            <p>3 jam yang lalu</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
